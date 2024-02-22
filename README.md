@@ -50,12 +50,12 @@ $ spike
 ## ASSEMBLING THE CODE
 The GCC compiler would generate an executable file **SAMPLE**, which will execute on spike
 ```bash
-riscv32-unknown-elf-gcc -march=rv32i_zicsr -mabi=ilp32 -o SAMPLE exception_handling.S -nostartfiles -L link.ld
+riscv32-unknown-elf-gcc -march=rv32i_zicsr -mabi=ilp32 -o SAMPLE exception_handling.S -nostartfiles -Tlink.ld
 ```
 ## RUNNING ON SPIKE
-Now we will run the executable file.
+Now we will run the executable file to execute for 32-bit architecture.
 ```bash
-$ spike SAMPLE
+$ spike --isa=rv32i -d SAMPLE 
 ```
 
 
